@@ -4,8 +4,8 @@
   "moon": [
     { "title": "Moon at 4% Illumination",    "sub": "Day 7",    "meta": "New Moon",  "file": "images/IMG_7326.jpeg" },
     { "title": "Moon at 10% Illumination",  "sub": "Day 3–4",  "meta": "New Moon",  "file": "images/IMG_7365.jpeg" },
-    { "title": "Full Moon",        "sub": "Day 15",   "meta": "Full disk · Bengaluru",             "file": "images/IMG_6994.jpeg" },
-    { "title": "Sea of Crises",   "sub": "Day 10",   "meta": "Tycho · Clavius region",            "file": "images/IMG_6754.jpeg" },
+    { "title": "Full Moon",        "sub": "Day 15",   "meta": "Full disk · Bengaluru",  "file": "images/IMG_6994.jpeg" },
+    { "title": "Sea of Crises",   "sub": "Day 10",   "meta": "Tycho · Clavius region",   "file": "images/IMG_6754.jpeg" },
     
     { "title": "Closeup",   "sub": "Day 18",   "meta": "Closeup",                                  "file": "images/IMG_6833.jpeg" },
     { "title": "Last Quarter",     "sub": "Day 22",   "meta": "",                                  "file": "" },
