@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ravi Shukla · Astrophotography</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0e0e12; --paper: #f5f2eb; --cream: #ede9df;
+    --gold: #c8a96e; --gold-light: #e8d5a8; --deep: #1a1a2e;
+    --muted: #6b6560; --rule: rgba(14,14,18,0.12);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--paper); color: var(--ink); font-family: 'DM Sans', sans-serif; font-weight: 300; overflow-x: hidden; }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.4; }
+
+  /* MASTHEAD */
+  .masthead { position: relative; height: 100vh; min-height: 700px; background: var(--deep); overflow: hidden; display: flex; flex-direction: column; }
+  .masthead-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 60% 50% at 70% 40%, rgba(200,169,110,0.08) 0%, transparent 60%), radial-gradient(ellipse 40% 60% at 20% 70%, rgba(168,180,196,0.06) 0%, transparent 50%), linear-gradient(160deg, #0a0a14 0%, #1a1a2e 40%, #0f0f1e 100%); }
+  .stars { position: absolute; inset: 0; overflow: hidden; }
+  .stars span { position: absolute; border-radius: 50%; background: white; animation: twinkle var(--d,3s) ease-in-out infinite; animation-delay: var(--delay,0s); }
+  @keyframes twinkle { 0%,100% { opacity: var(--min-op,0.3); } 50% { opacity: var(--max-op,1); } }
+  .masthead-nav { position: relative; z-index: 10; display: flex; justify-content: space-between; align-items: center; padding: 2rem 4rem; border-bottom: 1px solid rgba(200,169,110,0.2); }
+  .nav-logo { font-family: 'DM Mono', monospace; font-size: 0.75rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; align-items: center; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,242,235,0.5); text-decoration: none; transition: color 0.3s; }
+  .nav-links a:hover { color: var(--gold); }
+  .masthead-content { position: relative; z-index: 10; flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 0 4rem; }
+  .issue-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.3em; color: var(--gold); text-transform: uppercase; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+  .issue-label::before { content: ''; display: block; width: 3rem; height: 1px; background: var(--gold); }
+  .masthead-title { font-family: 'Playfair Display', serif; font-size: clamp(4rem, 10vw, 9rem); font-weight: 900; line-height: 0.9; color: var(--paper); letter-spacing: -0.02em; max-width: 14ch; }
+  .masthead-title em { font-style: italic; color: var(--gold); }
+  .masthead-subtitle { margin-top: 2.5rem; display: flex; align-items: flex-start; gap: 3rem; max-width: 700px; }
+  .masthead-subtitle p { font-size: 1rem; line-height: 1.7; color: rgba(245,242,235,0.55); max-width: 36ch; }
+  .masthead-meta { display: flex; flex-direction: column; gap: 0.4rem; border-left: 1px solid rgba(200,169,110,0.3); padding-left: 2rem; white-space: nowrap; }
+  .masthead-meta span { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; color: rgba(200,169,110,0.6); text-transform: uppercase; }
+  .scroll-cue { position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; animation: bounce 2s ease-in-out infinite; }
+  .scroll-cue span { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: rgba(200,169,110,0.4); text-transform: uppercase; }
+  .scroll-cue::after { content: ''; display: block; width: 1px; height: 3rem; background: linear-gradient(to bottom, rgba(200,169,110,0.4), transparent); }
+  @keyframes bounce { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+
+  /* LAYOUT */
+  .site-body { max-width: 1400px; margin: 0 auto; padding: 0 3rem; }
+  .section-header { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 2rem; padding: 5rem 0 3rem; }
+  .section-header h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+  .section-header h2 em { font-style: italic; color: var(--gold); }
+  .section-rule { height: 1px; background: var(--rule); }
+  .section-number { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.2em; color: var(--muted); }
+
+  /* GALLERY TABS */
+  .gallery-nav { display: flex; border-bottom: 1px solid var(--rule); margin-bottom: 3rem; align-items: center; justify-content: space-between; }
+  .gallery-tabs { display: flex; }
+  .gallery-tab { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; padding: 1rem 2rem; border: none; background: none; color: var(--muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; transition: all 0.25s; }
+  .gallery-tab:hover { color: var(--ink); }
+  .gallery-tab.active { color: var(--ink); border-bottom-color: var(--ink); font-weight: 500; }
+  .gallery-count { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; color: var(--muted); padding-bottom: 1rem; }
+  .gallery-panel { display: none; }
+  .gallery-panel.active { display: block; }
+
+  /* GALLERY GRIDS — dynamic, auto-fill */
+  .gallery-grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .gallery-grid.moon-grid    { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+  .gallery-grid.planets-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+  .gallery-grid.stars-grid   { grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+  .gallery-grid.nebula-grid  { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); }
+
+  .gallery-item { position: relative; overflow: hidden; background: var(--deep); cursor: pointer; aspect-ratio: 3/4; }
+  .gallery-item.wide { aspect-ratio: 16/9; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease, filter 0.4s ease; filter: brightness(0.92); }
+  .gallery-item:hover img { transform: scale(1.04); filter: brightness(1.05); }
+  .gallery-item.empty-slot { border: 1.5px dashed rgba(200,169,110,0.2); cursor: default; }
+  .empty-inner { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; }
+  .empty-icon { width: 34px; height: 34px; border-radius: 50%; border: 1.5px solid rgba(200,169,110,0.25); display: flex; align-items: center; justify-content: center; color: rgba(200,169,110,0.35); font-size: 1.1rem; }
+  .empty-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(200,169,110,0.3); text-align: center; padding: 0 0.8rem; }
+  .gallery-item-caption { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem 1.5rem 1.5rem; background: linear-gradient(to top, rgba(10,10,20,0.9) 0%, transparent 100%); transform: translateY(4px); transition: transform 0.3s ease; }
+  .gallery-item:hover .gallery-item-caption { transform: translateY(0); }
+  .caption-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; margin-bottom: 0.3rem; }
+  .caption-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: white; line-height: 1.2; }
+  .caption-meta { font-size: 0.72rem; color: rgba(245,242,235,0.5); margin-top: 0.3rem; }
+
+  /* JSON HINT BANNER */
+  .json-hint { display: flex; align-items: center; gap: 1rem; padding: 0.9rem 1.4rem; background: rgba(200,169,110,0.06); border: 1px solid rgba(200,169,110,0.18); margin-bottom: 2rem; }
+  .json-hint-icon { font-size: 1rem; flex-shrink: 0; }
+  .json-hint p { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; color: rgba(200,169,110,0.6); line-height: 1.6; }
+  .json-hint code { color: var(--gold); background: rgba(200,169,110,0.1); padding: 0.1em 0.35em; }
+
+  /* ABOUT */
+  #about { background: var(--deep); color: var(--paper); margin: 6rem -3rem 0; padding: 6rem 3rem; }
+  .about-grid { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .about-text h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; line-height: 1.1; margin-bottom: 2rem; }
+  .about-text h2 em { font-style: italic; color: var(--gold); }
+  .about-text p { font-size: 1.05rem; line-height: 1.8; color: rgba(245,242,235,0.65); margin-bottom: 1.5rem; }
+  .about-text p strong { color: var(--gold-light); font-weight: 500; }
+  .equipment-panel h3 { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(200,169,110,0.2); }
+  .equipment-item { display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid rgba(245,242,235,0.06); }
+  .equip-label { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(245,242,235,0.3); padding-top: 0.15rem; }
+  .equip-value { font-size: 0.95rem; color: var(--paper); line-height: 1.5; }
+  .equip-note { font-size: 0.78rem; color: rgba(245,242,235,0.35); margin-top: 0.25rem; }
+  .location-badge { display: inline-flex; align-items: center; gap: 0.6rem; margin-top: 2rem; padding: 0.8rem 1.4rem; border: 1px solid rgba(200,169,110,0.25); font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); }
+  .location-badge::before { content: '◉'; font-size: 0.5rem; }
+
+  /* LOG */
+  #log { padding: 0 0 5rem; }
+  .log-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+  .log-table thead tr { border-bottom: 2px solid var(--ink); }
+  .log-table th { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 1rem 1.5rem 1rem 0; font-weight: 400; }
+  .log-table tbody tr { border-bottom: 1px solid var(--rule); transition: background 0.2s; }
+  .log-table tbody tr:hover { background: rgba(200,169,110,0.04); }
+  .log-table td { padding: 1.2rem 1.5rem 1.2rem 0; font-size: 0.9rem; vertical-align: top; }
+  .log-date { font-family: 'DM Mono', monospace; font-size: 0.72rem; color: var(--muted); white-space: nowrap; }
+  .log-object { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; }
+  .log-type-badge { display: inline-block; padding: 0.2rem 0.7rem; font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; border: 1px solid; }
+  .badge-moon   { color: #c8a96e; border-color: rgba(200,169,110,0.4); }
+  .badge-planet { color: #7ab8d4; border-color: rgba(122,184,212,0.4); }
+  .badge-star   { color: #d4c2a8; border-color: rgba(212,194,168,0.4); }
+  .badge-nebula { color: #a87ab8; border-color: rgba(168,122,184,0.4); }
+  .log-seeing { display: flex; gap: 3px; }
+  .seeing-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--rule); }
+  .seeing-dot.filled { background: var(--gold); }
+  .log-notes { color: var(--muted); font-size: 0.85rem; line-height: 1.5; max-width: 30ch; }
+
+  /* TECHNIQUE */
+  #technique { background: var(--cream); margin: 0 -3rem; padding: 5rem 3rem; }
+  .technique-inner { max-width: 1400px; margin: 0 auto; }
+  .technique-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 3rem; background: var(--rule); }
+  .technique-card { background: var(--cream); padding: 2.5rem; }
+  .technique-card h3 { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .technique-card h3 em { font-style: italic; color: var(--gold); }
+  .t-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: block; }
+  .technique-card p { font-size: 0.9rem; line-height: 1.75; color: #4a4540; }
+  .spec-list { margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+  .spec-row { display: flex; justify-content: space-between; align-items: baseline; padding-bottom: 0.6rem; border-bottom: 1px solid var(--rule); font-size: 0.82rem; }
+  .spec-key { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .spec-val { font-weight: 500; color: var(--ink); }
+
+  /* FOOTER */
+  footer { background: var(--ink); color: rgba(245,242,235,0.4); padding: 3rem; display: flex; justify-content: space-between; align-items: center; margin: 0 -3rem; }
+  footer .f-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-style: italic; color: var(--gold); }
+  footer .f-links { display: flex; gap: 2rem; }
+  footer a { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(245,242,235,0.35); text-decoration: none; transition: color 0.3s; }
+  footer a:hover { color: var(--gold); }
+  footer .f-copy { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.08em; }
+
+  /* LIGHTBOX */
+  .lightbox { position: fixed; inset: 0; background: rgba(10,10,20,0.96); z-index: 9000; display: none; align-items: center; justify-content: center; flex-direction: column; gap: 1.5rem; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 88vw; max-height: 78vh; object-fit: contain; }
+  .lightbox-caption { text-align: center; color: rgba(245,242,235,0.6); font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; }
+  .lightbox-nav { display: flex; gap: 1rem; }
+  .lb-btn { background: none; border: 1px solid rgba(245,242,235,0.15); color: rgba(245,242,235,0.4); font-size: 1.2rem; width: 44px; height: 44px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; }
+  .lb-btn:hover { border-color: var(--gold); color: var(--gold); }
+  .lightbox-close { position: absolute; top: 2rem; right: 2.5rem; background: none; border: none; color: rgba(245,242,235,0.4); font-size: 2rem; cursor: pointer; line-height: 1; transition: color 0.2s; }
+  .lightbox-close:hover { color: var(--gold); }
+
+  /* FADE IN */
+  .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* LOADING STATE */
+  .gallery-loading { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--muted); padding: 3rem 0; }
+
+  @media (max-width: 900px) {
+    .site-body { padding: 0 1.5rem; }
+    .masthead-nav { padding: 1.5rem; }
+    .masthead-content { padding: 0 1.5rem; }
+    .nav-links { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .technique-grid { grid-template-columns: 1fr; }
+    #about { margin: 4rem -1.5rem 0; padding: 4rem 1.5rem; }
+    #technique { margin: 0 -1.5rem; padding: 4rem 1.5rem; }
+    footer { margin: 0 -1.5rem; flex-direction: column; gap: 1.5rem; text-align: center; }
+    .section-header { grid-template-columns: auto 1fr; }
+    .section-number { display: none; }
+    .gallery-grid.nebula-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-bg"></div>
+  <div class="stars" id="starField"></div>
+  <nav class="masthead-nav">
+    <div class="nav-logo">Ravi Shukla · Astrophotography</div>
+    <ul class="nav-links">
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#about">Equipment</a></li>
+      <li><a href="#log">Observing Log</a></li>
+      <li><a href="#technique">Technique</a></li>
+      <li><a href="https://ravishukla1112.github.io/cinema-universe" target="_blank">Cinema Universe ↗</a></li>
+    </ul>
+  </nav>
+  <div class="masthead-content">
+    <div class="issue-label">Bengaluru · Urban Astrophotography</div>
+    <h1 class="masthead-title">Light from <em>Ancient</em> Skies</h1>
+    <div class="masthead-subtitle">
+      <p>A Distinguished Engineer's pursuit of the cosmos — one clear night at a time, from the skies above Bengaluru.</p>
+      <div class="masthead-meta">
+        <span>GSO 8" Dobsonian</span>
+        <span>Equatorial Platform</span>
+        <span>iPhone 16 Plus · Afocal</span>
+        <span>Lat 12.97° N</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-cue"><span>Explore</span></div>
+</header>
+
+<div class="site-body">
+
+  <section id="gallery">
+    <div class="section-header fade-up">
+      <h2>The <em>Gallery</em></h2>
+      <div class="section-rule"></div>
+      <span class="section-number">01</span>
+    </div>
+
+    <!-- Hint shown only when slots are empty (developer-friendly) -->
+    <div class="json-hint fade-up" id="jsonHint" style="display:none;">
+      <div class="json-hint-icon">📄</div>
+      <p>To add images: open <code>gallery.json</code> and set <code>"file": "images/your-photo.jpg"</code> for each entry. Upload your images to the <code>images/</code> folder. That's it.</p>
+    </div>
+
+    <nav class="gallery-nav fade-up">
+      <div class="gallery-tabs">
+        <button class="gallery-tab active" data-panel="moon">Moon</button>
+        <button class="gallery-tab" data-panel="planets">Planets</button>
+        <button class="gallery-tab" data-panel="stars">Stars</button>
+        <button class="gallery-tab" data-panel="nebula">Nebula</button>
+      </div>
+      <span class="gallery-count" id="galleryCount"></span>
+    </nav>
+
+    <div class="gallery-panel active" id="panel-moon">
+      <div class="gallery-grid moon-grid" id="grid-moon"><div class="gallery-loading">Loading gallery…</div></div>
+    </div>
+    <div class="gallery-panel" id="panel-planets">
+      <div class="gallery-grid planets-grid" id="grid-planets"></div>
+    </div>
+    <div class="gallery-panel" id="panel-stars">
+      <div class="gallery-grid stars-grid" id="grid-stars"></div>
+    </div>
+    <div class="gallery-panel" id="panel-nebula">
+      <div class="gallery-grid nebula-grid" id="grid-nebula"></div>
+    </div>
+  </section>
+
+  <section id="log">
+    <div class="section-header fade-up">
+      <h2>Observing <em>Log</em></h2>
+      <div class="section-rule"></div>
+      <span class="section-number">02</span>
+    </div>
+    <table class="log-table fade-up">
+      <thead><tr><th>Date</th><th>Object</th><th>Type</th><th>Seeing</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td class="log-date">Mar 2025</td><td class="log-object">Orion Nebula (M42)</td><td><span class="log-type-badge badge-nebula">Nebula</span></td><td><div class="log-seeing"><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot"></div></div></td><td class="log-notes">Trapezium resolved cleanly. Wispy outer structure visible. Best session yet.</td></tr>
+        <tr><td class="log-date">Feb 2025</td><td class="log-object">Saturn</td><td><span class="log-type-badge badge-planet">Planet</span></td><td><div class="log-seeing"><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div></div></td><td class="log-notes">Ring system crisp. Cassini division visible. Titan spotted as a point of light.</td></tr>
+        <tr><td class="log-date">Feb 2025</td><td class="log-object">Betelgeuse</td><td><span class="log-type-badge badge-star">Star</span></td><td><div class="log-seeing"><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot"></div><div class="seeing-dot"></div></div></td><td class="log-notes">Orange-amber colour unmistakable through eyepiece. Beautiful diffraction spikes on iPhone.</td></tr>
+        <tr><td class="log-date">Jan 2025</td><td class="log-object">Jupiter</td><td><span class="log-type-badge badge-planet">Planet</span></td><td><div class="log-seeing"><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot"></div></div></td><td class="log-notes">All 4 Galilean moons visible. Two cloud bands clear. Great Red Spot elusive.</td></tr>
+        <tr><td class="log-date">Jan 2025</td><td class="log-object">Full Moon</td><td><span class="log-type-badge badge-moon">Moon</span></td><td><div class="log-seeing"><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div></div></td><td class="log-notes">Captured full phase collage across 14 days. Tycho crater ejecta rays stunning.</td></tr>
+        <tr><td class="log-date">Dec 2024</td><td class="log-object">Rigel</td><td><span class="log-type-badge badge-star">Star</span></td><td><div class="log-seeing"><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot"></div></div></td><td class="log-notes">Brilliant blue-white. 8-spike diffraction pattern. Most photogenic star so far.</td></tr>
+        <tr><td class="log-date">Nov 2024</td><td class="log-object">Sirius</td><td><span class="log-type-badge badge-star">Star</span></td><td><div class="log-seeing"><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot filled"></div><div class="seeing-dot"></div><div class="seeing-dot"></div></div></td><td class="log-notes">Overwhelming brightness. Atmospheric scintillation caused colour dancing — mesmerising.</td></tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<section id="about">
+  <div class="about-grid fade-up">
+    <div class="about-text">
+      <h2>The Observer<br><em>& His Sky</em></h2>
+      <p>I'm a <strong>Distinguished Engineer</strong> working at the intersection of AI/ML and LLM-augmented systems. A year ago I discovered that the same curiosity that drives me to build things by day could be pointed upward at night.</p>
+      <p>Stargazing from <strong>Bengaluru</strong> — a city of 12 million people and considerable light pollution — turns out to be both a constraint and a creative challenge. What's possible under these skies genuinely surprised me.</p>
+      <p>Everything here was captured <strong>afocally</strong>: iPhone 16 Plus held to the eyepiece. No dedicated astronomy camera, no image stacking, no dark sky site. Just patience, a steady mount, and clear air.</p>
+      <div class="location-badge">Bengaluru · 12.97° N, 77.59° E · ~920m elevation</div>
+    </div>
+    <div class="equipment-panel">
+      <h3>The Setup</h3>
+      <div class="equipment-item"><div class="equip-label">Telescope</div><div class="equip-value">GSO 8" Dobsonian<div class="equip-note">203mm aperture · f/5.9 · 1200mm focal length</div></div></div>
+      <div class="equipment-item"><div class="equip-label">Mount</div><div class="equip-value">Equatorial Platform<div class="equip-note">Motorised tracking · Compensates Earth's rotation</div></div></div>
+      <div class="equipment-item"><div class="equip-label">Camera</div><div class="equip-value">iPhone 16 Plus<div class="equip-note">Afocal technique · ProRAW capture</div></div></div>
+      <div class="equipment-item"><div class="equip-label">Eyepieces</div><div class="equip-value">25mm · 10mm · 6mm<div class="equip-note">48× to 200× magnification range</div></div></div>
+      <div class="equipment-item"><div class="equip-label">Location</div><div class="equip-value">Bengaluru, India<div class="equip-note">Bortle Class 7 · Urban skies</div></div></div>
+      <div class="equipment-item"><div class="equip-label">Since</div><div class="equip-value">2024<div class="equip-note">First light: The Moon</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="technique">
+  <div class="technique-inner">
+    <div class="section-header fade-up" style="padding-top:0;">
+      <h2>Notes on <em>Technique</em></h2>
+      <div class="section-rule"></div>
+      <span class="section-number">03</span>
+    </div>
+    <div class="technique-grid fade-up">
+      <div class="technique-card">
+        <span class="t-label">Method</span>
+        <h3>Afocal <em>Photography</em></h3>
+        <p>The iPhone 16 Plus is held or clamped directly to the telescope eyepiece — no adapters, no dedicated astrocamera. The phone's computational photography stack does the rest. Surprisingly effective for bright objects.</p>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-key">Technique</span><span class="spec-val">Afocal</span></div>
+          <div class="spec-row"><span class="spec-key">Format</span><span class="spec-val">ProRAW + HEIC</span></div>
+          <div class="spec-row"><span class="spec-key">Processing</span><span class="spec-val">Lightroom Mobile</span></div>
+        </div>
+      </div>
+      <div class="technique-card">
+        <span class="t-label">The Challenge</span>
+        <h3>Urban <em>Skies</em></h3>
+        <p>Bengaluru sits at Bortle Class 7 — suburban/urban with a noticeably bright horizon glow. Deep sky objects require patience. But planets, the Moon, and bright stars are entirely viable targets.</p>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-key">Bortle Class</span><span class="spec-val">7 · Urban</span></div>
+          <div class="spec-row"><span class="spec-key">Best targets</span><span class="spec-val">Moon, planets, bright stars</span></div>
+          <div class="spec-row"><span class="spec-key">Best months</span><span class="spec-val">Nov – Mar</span></div>
+        </div>
+      </div>
+      <div class="technique-card">
+        <span class="t-label">The Platform</span>
+        <h3>Equatorial <em>Tracking</em></h3>
+        <p>The motorised equatorial platform compensates for Earth's rotation, keeping objects stationary in the eyepiece long enough for the iPhone to expose properly without trailing.</p>
+        <div class="spec-list">
+          <div class="spec-row"><span class="spec-key">Tracking rate</span><span class="spec-val">Sidereal</span></div>
+          <div class="spec-row"><span class="spec-key">Key benefit</span><span class="spec-val">No star trailing</span></div>
+          <div class="spec-row"><span class="spec-key">Runtime</span><span class="spec-val">~60 min per reset</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="site-body">
+  <footer>
+    <div class="f-logo">Ravi Shukla</div>
+    <div class="f-links">
+      <a href="https://ravishukla1112.github.io/cinema-universe" target="_blank">Cinema Universe</a>
+      <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+      <a href="https://github.com/ravishukla1112" target="_blank">GitHub</a>
+      <a href="https://www.astrobin.com" target="_blank">AstroBin</a>
+    </div>
+    <div class="f-copy">© 2025 · Bengaluru, India · Light from ancient skies</div>
+  </footer>
+</div>
+
+<!-- LIGHTBOX with prev/next -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img id="lb-img" src="" alt="">
+  <div class="lightbox-caption" id="lb-cap"></div>
+  <div class="lightbox-nav">
+    <button class="lb-btn" onclick="lbStep(-1)">‹</button>
+    <button class="lb-btn" onclick="lbStep(1)">›</button>
+  </div>
+</div>
+
+<script>
+// ── GALLERY RENDERING ─────────────────────────────────────────────────────────
+
+const GRIDS = { moon:'grid-moon', planets:'grid-planets', stars:'grid-stars', nebula:'grid-nebula' };
+
+// All images currently displayed (for lightbox prev/next)
+let allImages = [];   // [{ src, title, meta }]
+let lbIndex = 0;
+
+async function loadGallery() {
+  let data;
+  try {
+    const res = await fetch('gallery.json');
+    if (!res.ok) throw new Error('gallery.json not found');
+    data = await res.json();
+  } catch (e) {
+    console.warn('Could not load gallery.json:', e);
+    showJsonHint();
+    return;
+  }
+
+  allImages = [];
+  let totalWithImages = 0;
+
+  for (const cat of ['moon','planets','stars','nebula']) {
+    const items = data[cat] || [];
+    const grid = document.getElementById(GRIDS[cat]);
+    grid.innerHTML = '';
+
+    for (const item of items) {
+      const hasImg = item.file && item.file.trim() !== '';
+      if (hasImg) totalWithImages++;
+
+      const el = document.createElement('div');
+      // nebula items get wide aspect ratio
+      const isWide = cat === 'nebula';
+      el.className = 'gallery-item' + (isWide ? ' wide' : '') + (hasImg ? '' : ' empty-slot');
+
+      if (hasImg) {
+        const imgIndex = allImages.length;
+        allImages.push({ src: item.file, title: item.title, meta: item.meta || '' });
+        el.onclick = () => openLightbox(imgIndex);
+        el.innerHTML = `
+          <img src="${item.file}" alt="${item.title}" loading="lazy">
+          <div class="gallery-item-caption">
+            <div class="caption-label">${item.sub || ''}</div>
+            <div class="caption-title">${item.title}</div>
+            ${item.meta ? `<div class="caption-meta">${item.meta}</div>` : ''}
+          </div>`;
+      } else {
+        el.innerHTML = `
+          <div class="empty-inner">
+            <div class="empty-icon">+</div>
+            <div class="empty-label">${item.title}</div>
+          </div>`;
+      }
+      grid.appendChild(el);
+    }
+  }
+
+  // Show hint if nothing has images yet
+  if (totalWithImages === 0) showJsonHint();
+
+  // Update count badge on active tab
+  updateCount();
+}
+
+function showJsonHint() {
+  document.getElementById('jsonHint').style.display = 'flex';
+}
+
+function updateCount() {
+  const activePanel = document.querySelector('.gallery-panel.active');
+  if (!activePanel) return;
+  const filled = activePanel.querySelectorAll('.gallery-item:not(.empty-slot)').length;
+  const total  = activePanel.querySelectorAll('.gallery-item').length;
+  document.getElementById('galleryCount').textContent = filled + ' / ' + total + ' images';
+}
+
+// ── GALLERY TABS ──────────────────────────────────────────────────────────────
+document.querySelectorAll('.gallery-tab').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.gallery-tab').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.gallery-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel-' + btn.dataset.panel).classList.add('active');
+    updateCount();
+  });
+});
+
+// ── LIGHTBOX ──────────────────────────────────────────────────────────────────
+function openLightbox(index) {
+  lbIndex = index;
+  renderLightbox();
+  document.getElementById('lightbox').classList.add('open');
+}
+function renderLightbox() {
+  const img = allImages[lbIndex];
+  if (!img) return;
+  document.getElementById('lb-img').src = img.src;
+  document.getElementById('lb-cap').textContent = img.title + (img.meta ? ' · ' + img.meta : '');
+}
+function lbStep(dir) {
+  lbIndex = (lbIndex + dir + allImages.length) % allImages.length;
+  renderLightbox();
+}
+function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+document.getElementById('lightbox').addEventListener('click', e => { if (e.target === document.getElementById('lightbox')) closeLightbox(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') lbStep(1);
+  if (e.key === 'ArrowLeft')  lbStep(-1);
+});
+
+// ── STAR FIELD ────────────────────────────────────────────────────────────────
+const sf = document.getElementById('starField');
+for (let i = 0; i < 220; i++) {
+  const s = document.createElement('span');
+  const sz = Math.random() * 2.5 + 0.5;
+  s.style.cssText = `width:${sz}px;height:${sz}px;left:${Math.random()*100}%;top:${Math.random()*100}%;--d:${2+Math.random()*4}s;--delay:${Math.random()*5}s;--min-op:${0.1+Math.random()*0.3};--max-op:${0.6+Math.random()*0.4};`;
+  sf.appendChild(s);
+}
+
+// ── FADE IN ───────────────────────────────────────────────────────────────────
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+loadGallery();
+</script>
+</body>
+</html>

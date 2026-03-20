@@ -1,0 +1,34 @@
+{
+  "_instructions": "This is the only file you need to edit to manage your gallery. Set 'file' to the image path relative to index.html (e.g. 'images/betelgeuse.jpg'). Leave 'file' as '' to show an empty placeholder slot. Add as many entries as you like to any category.",
+
+  "moon": [
+    { "title": "Waxing Crescent",  "sub": "Day 3–4",  "meta": "Terminator detail · Apennine Mts",  "file": "" },
+    { "title": "First Quarter",    "sub": "Day 7",    "meta": "Mare Imbrium · Copernicus crater",  "file": "" },
+    { "title": "Waxing Gibbous",   "sub": "Day 10",   "meta": "Tycho · Clavius region",            "file": "" },
+    { "title": "Full Moon",        "sub": "Day 15",   "meta": "Full disk · Bengaluru",             "file": "" },
+    { "title": "Waning Gibbous",   "sub": "Day 18",   "meta": "",                                  "file": "" },
+    { "title": "Last Quarter",     "sub": "Day 22",   "meta": "",                                  "file": "" },
+    { "title": "Waning Crescent",  "sub": "Day 26",   "meta": "",                                  "file": "" }
+  ],
+
+  "planets": [
+    { "title": "Jupiter",         "sub": "Gas Giant · 5.2 AU",    "meta": "Cloud bands · Galilean moons visible", "file": "" },
+    { "title": "Saturn",          "sub": "Ringed Giant · 9.5 AU", "meta": "Ring system · Cassini division",       "file": "" },
+    { "title": "Saturn · Rings",  "sub": "Saturn Close-up",       "meta": "Afocal · iPhone 16 Plus",              "file": "" }
+  ],
+
+  "stars": [
+    { "title": "Betelgeuse", "sub": "Red Supergiant · ~700 ly",  "meta": "α Orionis · Would engulf Jupiter's orbit",  "file": "images/Betelguese.jpeg" },
+    { "title": "Sirius",     "sub": "A-type · 8.6 ly",           "meta": "α Canis Majoris · Brightest star in sky",   "file": "images/Sirius.jpeg" },
+    { "title": "Rigel",      "sub": "Blue Supergiant · ~860 ly", "meta": "β Orionis · 120,000× solar luminosity",     "file": "images/Rigel.jpeg" },
+    { "title": "Capella",    "sub": "G Giant × 4 · 43 ly",      "meta": "α Aurigae · Four-star system",              "file": "images/Capella.jpeg" },
+    { "title": "Aldebaran",  "sub": "K Red Giant · 65 ly",       "meta": "α Tauri · Eye of Taurus",                   "file": "images/Eldebaran.jpeg" },
+    { "title": "Procyon",    "sub": "F-type · 11.4 ly",          "meta": "α Canis Minoris · 8th brightest",           "file": "images/Canis_Minor.jpeg" },
+    { "title": "Pollux",     "sub": "K Giant · 34 ly",           "meta": "β Geminorum · Confirmed exoplanet",         "file": "images/Pollux.png" }
+  ],
+
+  "nebula": [
+    { "title": "The Orion Nebula",  "sub": "Emission Nebula · 1,344 ly", "meta": "M42 · Stellar nursery · Trapezium cluster",  "file": "" },
+    { "title": "Trapezium Region",  "sub": "M42 · Core Detail",          "meta": "4 hot young stars illuminating the cloud",   "file": "" }
+  ]
+}
