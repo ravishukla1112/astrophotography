@@ -2,18 +2,20 @@
   "_instructions": "This is the only file you need to edit to manage your gallery. Set 'file' to the image path relative to index.html (e.g. 'images/betelgeuse.jpg'). Leave 'file' as '' to show an empty placeholder slot. Add as many entries as you like to any category.",
 
   "moon": [
-    { "title": "Waxing Crescent",  "sub": "Day 3–4",  "meta": "Terminator detail · Apennine Mts",  "file": "" },
-    { "title": "First Quarter",    "sub": "Day 7",    "meta": "Mare Imbrium · Copernicus crater",  "file": "" },
-    { "title": "Waxing Gibbous",   "sub": "Day 10",   "meta": "Tycho · Clavius region",            "file": "" },
-    { "title": "Full Moon",        "sub": "Day 15",   "meta": "Full disk · Bengaluru",             "file": "" },
-    { "title": "Waning Gibbous",   "sub": "Day 18",   "meta": "",                                  "file": "" },
+    { "title": "Moon at 4% Illumination",    "sub": "Day 7",    "meta": "Moon at 4% Illumination",  "file": "images/IMG_7326.jpeg" },
+    { "title": "Moon at 10% Illumination",  "sub": "Day 3–4",  "meta": "Moon at 10% Illumination · Apennine Mts",  "file": "images/IMG_7365.jpeg" },
+    { "title": "Full Moon",        "sub": "Day 15",   "meta": "Full disk · Bengaluru",             "file": "images/IMG_6994.jpeg" },
+    { "title": "Sea of Crises",   "sub": "Day 10",   "meta": "Tycho · Clavius region",            "file": "images/IMG_6994.jpeg" },
+    
+    { "title": "Closeup",   "sub": "Day 18",   "meta": "Closeup",                                  "file": "/images/IMG_6833.jpeg" },
     { "title": "Last Quarter",     "sub": "Day 22",   "meta": "",                                  "file": "" },
     { "title": "Waning Crescent",  "sub": "Day 26",   "meta": "",                                  "file": "" }
   ],
 
   "planets": [
-    { "title": "Jupiter",         "sub": "Gas Giant · 5.2 AU",    "meta": "Cloud bands · Galilean moons visible", "file": "" },
-    { "title": "Saturn",          "sub": "Ringed Giant · 9.5 AU", "meta": "Ring system · Cassini division",       "file": "" },
+    { "title": "Jupiter",         "sub": "Gas Giant · 5.2 AU",    "meta": "Cloud bands of Jupiter", "file": "images/IMG_0837.jpeg" },
+     { "title": "Jupiter",         "sub": "Gas Giant · 5.2 AU",    "meta": "Cloud bands of Jupiter", "file": "images/IMG_0838.jpeg" },
+    { "title": "Saturn",          "sub": "Ringed Giant · 9.5 AU", "meta": "Ring system · Cassini division",       "file": "images/Saturn_Zoomed_in_Video_6th_Nov_pipp_100r_96T_1551regv5.png" },
     { "title": "Saturn · Rings",  "sub": "Saturn Close-up",       "meta": "Afocal · iPhone 16 Plus",              "file": "" }
   ],
 
@@ -28,7 +30,7 @@
   ],
 
   "nebula": [
-    { "title": "The Orion Nebula",  "sub": "Emission Nebula · 1,344 ly", "meta": "M42 · Stellar nursery · Trapezium cluster",  "file": "" },
+    { "title": "The Orion Nebula",  "sub": "Emission Nebula · 1,344 ly", "meta": "M42 · Stellar nursery · Trapezium cluster",  "file": "images/IMG_7230.jpeg" },
     { "title": "Trapezium Region",  "sub": "M42 · Core Detail",          "meta": "4 hot young stars illuminating the cloud",   "file": "" }
   ]
 }
