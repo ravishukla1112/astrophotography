@@ -7,15 +7,21 @@
 { "title": "Full Moon",           "sub": "100% illumination",                "meta": "Tycho ejecta rays · Mare Imbrium · Copernicus visible",       "file": "images/IMG_6994.jpeg" },
 { "title": "Crescent Moon",       "sub": "~10% illumination · Dusk",         "meta": "Atmospheric scattering · Golden crescent near the horizon",   "file": "images/IMG_7365.jpeg" },
 { "title": "Earthshine",          "sub": "~4% illumination · New Moon",      "meta": "Sunlight reflected off Earth illuminates the dark lunar disk", "file": "images/IMG_7326.jpeg" },
-    { "title": "Last Quarter",     "sub": "Day 22",   "meta": "",                                  "file": "" },
-    { "title": "Waning Crescent",  "sub": "Day 26",   "meta": "",                                  "file": "" }
+   
+    { "title": "Lunar Eclipse Progression","sub": "Total Lunar Eclipse · Bengaluru","meta": "6-frame sequence · Penumbra to blood moon totality",                  "file": "images/lunar_eclipse_collage_final.JPEG" },
+{ "title": "Lunar Phase Cycle",        "sub": "9 phases · One lunar month",    "meta": "Thin crescent to full and back · Circular composition",                 "file": "images/IMG_7666.PNG" },
+{ "title": "Waxing Crescent",          "sub": "~28% illumination",             "meta": "Sharp terminator · Crater detail along the limb",                      "file": "images/IMG_6747.JPEG" },
+{ "title": "Apennine Mountains",       "sub": "Mare Imbrium boundary",         "meta": "Archimedes crater · Highland-mare scarp · Montes Apenninus",            "file": "images/IMG_6823.JPEG" },
+{ "title": "Alpine Valley Region",     "sub": "Cigar craters · Terminator",    "meta": "Elongated impact features · Dramatic shadow relief",                   "file": "images/IMG_0695.JPEG" }
   ],
 
   "planets": [
    { "title": "Saturn",                  "sub": "Gas Giant · 9.5 AU",         "meta": "Ring system visible · Near edge-on · Nov 6 · PIPP processed",          "file": "images/Saturn_Zoomed_in_Video_6th_Nov_pipp_100r_96T_1551regv5.png" },
 { "title": "Jupiter & Moons",         "sub": "Gas Giant · 5.2 AU",         "meta": "3 Galilean moons visible · Io, Europa, Callisto in alignment",           "file": "images/IMG_0838.jpeg" },
 { "title": "Jupiter · Cloud Bands",   "sub": "North & South Equatorial Belt", "meta": "Two prominent cloud bands resolved · Afocal iPhone 16 Plus",          "file": "images/IMG_0837.jpeg" },
-    { "title": "Saturn · Rings",  "sub": "Saturn Close-up",       "meta": "Afocal · iPhone 16 Plus",              "file": "" }
+  { "title": "Saturn · Raw Stack",       "sub": "Gas Giant · 9.5 AU",            "meta": "Unprocessed PIPP stack · Ring plane visible",                          "file": "images/Saturn_Raw_2_pipp_100r_96T_107reg.JPEG" },
+{ "title": "Jupiter · Moon Shadow",    "sub": "Gas Giant · 5.2 AU",            "meta": "Rare shadow transit on disk · Galilean moon eclipse captured",          "file": "images/IMG_0422.JPEG" }  
+   
   ],
 
   "stars": [
@@ -30,6 +36,8 @@
 
   "nebula": [
     { "title": "The Orion Nebula",  "sub": "Emission Nebula · 1,344 ly", "meta": "M42 · Stellar nursery · Trapezium cluster",  "file": "images/IMG_7230.jpeg" },
-    { "title": "Trapezium Region",  "sub": "M42 · Core Detail",          "meta": "4 hot young stars illuminating the cloud",   "file": "" }
+    { "title": "Trapezium Region",  "sub": "M42 · Core Detail",          "meta": "4 hot young stars illuminating the cloud",   "file": "" },
+    { "title": "Orion Nebula · M42/M43",   "sub": "Emission Nebula · 1,344 ly",    "meta": "Trapezium cluster blazing · Nebulosity resolved · Bengaluru skies",    "file": "images/IMG_6711.JPEG" },
+{ "title": "Orion Star Field",         "sub": "M42 region · Wide field",       "meta": "Orion constellation stars · Context view of nebula region",             "file": "images/IMG_0643.JPEG" }
   ]
 }
