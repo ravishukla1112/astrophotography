@@ -36,8 +36,7 @@
 
   "nebula": [
     { "title": "The Orion Nebula",  "sub": "Emission Nebula · 1,344 ly", "meta": "M42 · Stellar nursery · Trapezium cluster",  "file": "images/IMG_7230.jpeg" },
-    { "title": "Trapezium Region",  "sub": "M42 · Core Detail",          "meta": "4 hot young stars illuminating the cloud",   "file": "" },
-    { "title": "Orion Nebula · M42/M43",   "sub": "Emission Nebula · 1,344 ly",    "meta": "Trapezium cluster blazing · Nebulosity resolved · Bengaluru skies",    "file": "images/IMG_6711.JPEG" },
-{ "title": "Orion Star Field",         "sub": "M42 region · Wide field",       "meta": "Orion constellation stars · Context view of nebula region",             "file": "images/IMG_0643.JPEG" }
+       { "title": "Orion Nebula · M42/M43",   "sub": "Emission Nebula · 1,344 ly",    "meta": "Trapezium cluster blazing · Nebulosity resolved · Bengaluru skies",    "file": "images/IMG_6711.JPEG" },
+{ "title": "Pleiades · M45",   "sub": "Open Cluster · 444 ly",   "meta": "The Seven Sisters · 9 stars visible · Taurus constellation",   "file": "images/IMG_0643.JPEG" }
   ]
 }
