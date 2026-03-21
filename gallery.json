@@ -2,12 +2,11 @@
   "_instructions": "This is the only file you need to edit to manage your gallery. Set 'file' to the image path relative to index.html (e.g. 'images/betelgeuse.jpg'). Leave 'file' as '' to show an empty placeholder slot. Add as many entries as you like to any category.",
 
   "moon": [
-    { "title": "Moon at 4% Illumination",    "sub": "Day 7",    "meta": "New Moon",  "file": "images/IMG_7326.jpeg" },
-    { "title": "Moon at 10% Illumination",  "sub": "Day 3–4",  "meta": "New Moon",  "file": "images/IMG_7365.jpeg" },
-    { "title": "Full Moon",        "sub": "Day 15",   "meta": "Full disk · Bengaluru",  "file": "images/IMG_6994.jpeg" },
-    { "title": "Sea of Crises",   "sub": "Day 10",   "meta": "Tycho · Clavius region",   "file": "images/IMG_6754.jpeg" },
-    
-    { "title": "Closeup",   "sub": "Day 18",   "meta": "Closeup",                                  "file": "images/IMG_6833.jpeg" },
+    { "title": "Clavius Region",      "sub": "Southern Highlands · Terminator",  "meta": "Clavius & Maginus craters · Ancient impact terrain",        "file": "images/IMG_6833.jpeg" },
+{ "title": "Mare Crisium",        "sub": "Sea of Crises · Northeast limb",   "meta": "Isolated circular mare · 740km diameter lava plain",         "file": "images/IMG_6754.jpeg" },
+{ "title": "Full Moon",           "sub": "100% illumination",                "meta": "Tycho ejecta rays · Mare Imbrium · Copernicus visible",       "file": "images/IMG_6994.jpeg" },
+{ "title": "Crescent Moon",       "sub": "~10% illumination · Dusk",         "meta": "Atmospheric scattering · Golden crescent near the horizon",   "file": "images/IMG_7365.jpeg" },
+{ "title": "Earthshine",          "sub": "~4% illumination · New Moon",      "meta": "Sunlight reflected off Earth illuminates the dark lunar disk", "file": "images/IMG_7326.jpeg" },
     { "title": "Last Quarter",     "sub": "Day 22",   "meta": "",                                  "file": "" },
     { "title": "Waning Crescent",  "sub": "Day 26",   "meta": "",                                  "file": "" }
   ],
