@@ -12,9 +12,9 @@
   ],
 
   "planets": [
-    { "title": "Jupiter",         "sub": "Gas Giant · 5.2 AU",    "meta": "Cloud bands of Jupiter", "file": "images/IMG_0837.jpeg" },
-     { "title": "Jupiter",         "sub": "Gas Giant · 5.2 AU",    "meta": "Cloud bands of Jupiter", "file": "images/IMG_0838.jpeg" },
-    { "title": "Saturn",          "sub": "Ringed Giant · 9.5 AU", "meta": "Ring system · Cassini division",       "file": "images/Saturn_Zoomed_in_Video_6th_Nov_pipp_100r_96T_1551regv5.png" },
+   { "title": "Saturn",                  "sub": "Gas Giant · 9.5 AU",         "meta": "Ring system visible · Near edge-on · Nov 6 · PIPP processed",          "file": "images/Saturn_Zoomed_in_Video_6th_Nov_pipp_100r_96T_1551regv5.png" },
+{ "title": "Jupiter & Moons",         "sub": "Gas Giant · 5.2 AU",         "meta": "3 Galilean moons visible · Io, Europa, Callisto in alignment",           "file": "images/IMG_0838.jpeg" },
+{ "title": "Jupiter · Cloud Bands",   "sub": "North & South Equatorial Belt", "meta": "Two prominent cloud bands resolved · Afocal iPhone 16 Plus",          "file": "images/IMG_0837.jpeg" },
     { "title": "Saturn · Rings",  "sub": "Saturn Close-up",       "meta": "Afocal · iPhone 16 Plus",              "file": "" }
   ],
 
