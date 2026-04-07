@@ -31,7 +31,8 @@
     { "title": "Capella",    "sub": "G Giant × 4 · 43 ly",      "meta": "α Aurigae · Four-star system",              "file": "images/Capella.jpeg" },
     { "title": "Aldebaran",  "sub": "K Red Giant · 65 ly",       "meta": "α Tauri · Eye of Taurus",                   "file": "images/Eldebaran.jpeg" },
     { "title": "Procyon",    "sub": "F-type · 11.4 ly",          "meta": "α Canis Minoris · 8th brightest",           "file": "images/Canis_Minor.jpeg" },
-    { "title": "Pollux",     "sub": "K Giant · 34 ly",           "meta": "β Geminorum · Confirmed exoplanet",         "file": "images/Pollux.png" }
+    { "title": "Pollux",     "sub": "K Giant · 34 ly",           "meta": "β Geminorum · Confirmed exoplanet",         "file": "images/Pollux.png" },
+    { "title": "Arcturus", "sub": "K-type Orange Giant · 37 ly", "meta": "α Boötis · Brightest star in northern sky · 170× solar luminosity", "file": "images/IMG_1136.jpeg" }
   ],
 
   "nebula": [
