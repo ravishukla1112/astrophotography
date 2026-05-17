@@ -20,6 +20,8 @@
 { "title": "Jupiter & Moons",         "sub": "Gas Giant · 5.2 AU",         "meta": "3 Galilean moons visible · Io, Europa, Callisto in alignment",           "file": "images/IMG_0838.jpeg" },
 { "title": "Jupiter · Cloud Bands",   "sub": "North & South Equatorial Belt", "meta": "Two prominent cloud bands resolved · Afocal iPhone 16 Plus",          "file": "images/IMG_0837.jpeg" },
   { "title": "Saturn · Raw Stack",       "sub": "Gas Giant · 9.5 AU",            "meta": "Unprocessed PIPP stack · Ring plane visible",                          "file": "images/Saturn_Raw_2_pipp_100r_96T_107reg.JPEG" },
+    { "title": "Jupiter disk",       "sub": "Jupiter's cloud bands ",            "meta": "North and South Equatorial Belts visible. Afocal iPhone through 8 inch Dobsonian on equatorial platform, Bengaluru.",   "file": "images/IMG_9369_Jupiter_Cloudband.jpeg" },
+    { "title": "Jupiter with moons",       "sub": "Jupiter and two Galilean moons",            "meta": "778 million km away, tracked and captured from my apartment ground floor. Afocal iPhone, single frame/raw", "file": "images/IMG_9371_Jupiter_with_moons.jpeg" },
 { "title": "Jupiter · Moon Shadow",    "sub": "Gas Giant · 5.2 AU",            "meta": "Rare shadow transit on disk · Galilean moon eclipse captured",          "file": "images/IMG_0422.JPEG" }  
    
   ],
